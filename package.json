@@ -6,9 +6,22 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
-    "lint": "eslint .",
+    "lint": "eslint . --fix",
     "preview": "vite preview",
     "prepare": "husky"
+  },
+  "lint-staged": {
+    "src/**/*.(ts|tsx|js|jsx)": [
+      "prettier --write"
+    ],
+    "src/**/*.(json|css|scss|md)|.(babelrc|prettierrc|eslint.js|tsconfig.json)": [
+      "prettier --write"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.1.2",
