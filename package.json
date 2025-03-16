@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
-    "lint": "eslint . --fix",
+    "lint": "eslint .",
+    "lint:fix": "npm run lint -- --fix",
     "preview": "vite preview",
     "prepare": "husky"
   },
